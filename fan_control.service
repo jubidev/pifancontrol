@@ -1,0 +1,10 @@
+[Unit]
+Description=Python Fan Control
+
+[Service]
+ExecStart=/usr/bin/python /opt/pifancontrol/fan_control.py
+ExecStop= /bin/kill -2 $MAINPID
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
